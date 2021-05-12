@@ -29,36 +29,36 @@ In this app, I have used Async Communication Approach for communication amoung s
 Not used any library or package for message queues, build by plain Javascript.
 
 
-To run posts service =>
-cd posts
-docker build -t blogs/posts .
-docker run -it blogs/posts
+#### To run posts service =>
+cd posts \
+docker build -t blogs/posts . \
+docker run -it blogs/posts 
 
 
-To run comments service =>
-cd comments
-docker build -t blogs/comments .
+#### To run comments service =>
+cd comments \
+docker build -t blogs/comments . \
 docker run -it blogs/comments
 
 
-To run query service =>
-cd query
-docker build -t blogs/query .
+#### To run query service =>
+cd query \
+docker build -t blogs/query . \
 docker run -it blogs/query
 
 
-To run moderation service =>
-cd moderation
-docker build -t blogs/moderation .
+#### To run moderation service =>
+cd moderation \
+docker build -t blogs/moderation . \
 docker run -it blogs/moderation
 
 
-To run event-bus =>
-cd event-bus
-docker build -t blogs/event-bus .
+#### To run event-bus =>
+cd event-bus \
+docker build -t blogs/event-bus . \
 docker run -it blogs/event-bus
 
 #### To run client UI app =>
 cd client \
 docker build -t blogs/client . \
-docker run -it blogs/client \
+docker run -it blogs/client 
