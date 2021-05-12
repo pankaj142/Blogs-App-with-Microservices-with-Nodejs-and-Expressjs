@@ -58,7 +58,7 @@ cd event-bus
 docker build -t blogs/event-bus .
 docker run -it blogs/event-bus
 
-To run client UI app =>
+#### To run client UI app =>
 cd client
 docker build -t blogs/client .
 docker run -it blogs/client
