@@ -20,7 +20,7 @@ app.post("/posts", async(req,res)=>{
     }
 
     //Emit Event
-    await axios.post("http://localhost:4005/events", {
+    await axios.post("http://event-bus-srv:4005/events", {
         type : "PostCreated",
         data : {
             id,title
@@ -39,5 +39,6 @@ app.post("/events", (req,res) =>{
 })
 
 app.listen(4000, () =>{
+    console.log("Its updated Version 66")
     console.log("Post Service Listing on 4000")
 })
