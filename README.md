@@ -28,37 +28,60 @@ I understood limitations of each of them, and use cases wherein they can be used
 In this app, I have used Async Communication Approach for communication amoung services.
 Not used any library or package for message queues, build by plain Javascript.
 
+Kubernetes is used to orchastrating Collection of Mico services.
 
-#### To run posts service =>
+Tools required =>
+1. Kubernetes, if you are using this deployment of local system, then install minikube
+2. install ingress-nginx
+
+## Deploy Microservices app using Kubernetes
+
+#### 1. Build docker images for each micro service
+
 cd posts \
-docker build -t blogs/posts . \
-docker run -it blogs/posts 
+docker build -t docker_hub_username/posts
 
-
-#### To run comments service =>
 cd comments \
-docker build -t blogs/comments . \
-docker run -it blogs/comments
+docker build -t docker_hub_username/comments
 
-
-#### To run query service =>
 cd query \
-docker build -t blogs/query . \
-docker run -it blogs/query
+docker build -t docker_hub_username/query
 
-
-#### To run moderation service =>
 cd moderation \
-docker build -t blogs/moderation . \
-docker run -it blogs/moderation
+docker build -t docker_hub_username/moderation
 
-
-#### To run event-bus =>
 cd event-bus \
-docker build -t blogs/event-bus . \
-docker run -it blogs/event-bus
+docker build -t docker_hub_username/event-bus
 
-#### To run client UI app =>
 cd client \
-docker build -t blogs/client . \
-docker run -it blogs/client 
+docker build -t docker_hub_username/client
+
+
+#### 2. Push them to docker hub
+
+docker login \
+docker push docker_hub_username/posts \
+docker push docker_hub_username/comments \
+docker push docker_hub_username/query \
+docker push docker_hub_username/moderation \
+docker push docker_hub_username/event-bus \
+docker push docker_hub_username/client \
+
+
+#### 3. create deployment object for each micro service using yaml file
+
+#### 4. create ClusterIP Service object for each micro service using yaml file
+
+
+#### 5. create Load Balancer Service with ingress-nginx using yaml file
+
+#### 6. write Routing rules there.
+
+#### 7. If you are deploying on local system, then add this change on /etc/hosts file, \
+minikube_id posts.com
+
+For 3, 4, 5, 6 use command => to create the Deployment and Service Objects. \
+kubectl apply -f file_name.yaml \
+
+
+This method of deployment can be used on production.

@@ -12,7 +12,7 @@ app.get("/posts", (req,res) =>{
     res.send(posts)
 })
 
-app.post("/posts", async(req,res)=>{
+app.post("/posts/create", async(req,res)=>{
     const id = randomBytes(4).toString("hex");
     const {title} = req.body;
     posts[id] = {
@@ -29,7 +29,7 @@ app.post("/posts", async(req,res)=>{
         console.log("post PostCreated err message ",err)
     });
     console.log("post new post api done")
-    res.status(201).send(posts[id]);
+    res.send(201).send(posts[id]);
 })
 
 //Receive Event From Event bus

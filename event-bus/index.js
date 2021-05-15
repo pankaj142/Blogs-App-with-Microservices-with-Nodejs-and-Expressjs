@@ -32,7 +32,7 @@ app.post("/events", (req,res)=>{
     });
 
     console.log("event bus event process done")
-    res.status({status : 'OK' });
+    res.send({status : 'OK' });
 })
 
 //Send all Events from Data Store
