@@ -28,9 +28,9 @@ I understood limitations of each of them, and use cases wherein they can be used
 In this app, I have used Async Communication Approach for communication amoung services.
 Not used any library or package for message queues, build by plain Javascript.
 
-Kubernetes is used to orchastrating Collection of Mico services.
+#### Kubernetes is used to orchastrating Collection of Mico services.
 
-Tools required =>
+##### Tools required =>
 1. Kubernetes, if you are using this deployment of local system, then install minikube
 2. install ingress-nginx
 
@@ -84,4 +84,4 @@ For 3, 4, 5, 6 use command => to create the Deployment and Service Objects. \
 kubectl apply -f file_name.yaml \
 
 
-This method of deployment can be used on production.
+##### This method of deployment can be used on production.
