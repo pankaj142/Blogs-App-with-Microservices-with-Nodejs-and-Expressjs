@@ -31,8 +31,8 @@ app.post("/events", (req,res)=>{
         console.log("event bus 4 err message ",err)
     });
 
-    console.log("event bus event process done")
-    res.status({status : 'OK' });
+    console.log("new event broadcasted from evnet bus")
+    res.send({status : 'OK' });
 })
 
 //Send all Events from Data Store

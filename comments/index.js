@@ -34,7 +34,7 @@ app.post("/posts/:id/comments", async(req,res) =>{
     }).catch((err) =>{
         console.log("comments CommentCreated err message ",err)
     });
-    res.status(201).send(comments);
+    res.send(201).send(comments);
 })
 
 //Receive Event From Event bus
